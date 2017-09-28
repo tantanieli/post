@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/icon.css">
+    <link rel="stylesheet" href="/static/css/materialize.min.css">
+    <script
+			  src="/static/js/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <script src="/static/js/materialize.min.js"></script>
+</head>
+<body>
+<form action="/newpost/">
+    <button class="btn waves-effect waves-light purple lighten-2" type="submit">Добавить пост</button>
+	<!--<input type="button" value="Добавить пост" onclick="javascript:window.location='/newpost/'"/>-->
+</form>
+{% for record in records %}
+   <div class="post_block purple lighten-5"> <h2>{{ record.title }}</h2>
+   <i> {{ record.date }}</i>
+    <br>
+    {{ record.content|safe }}
+    <br>
+   <i> {{ record.user.username }}</i>
+    <br></div>
+{% endfor %}
+</body>
+</html>

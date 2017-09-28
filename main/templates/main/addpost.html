@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/icon.css">
+    <link rel="stylesheet" href="/static/css/materialize.min.css">
+    <script
+			  src="/static/js/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <script src="/static/js/materialize.min.js"></script>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <button class="btn waves-effect waves-light purple lighten-2" type="submit">Ок</button>
+    </form>
+</body>
+</html>
